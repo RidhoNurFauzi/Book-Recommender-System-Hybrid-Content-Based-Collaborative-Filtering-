@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/cover.jpeg" alt="Book Recommender System" width="100%">
+  <img src="./images/Book.jpg" alt="Book Recommender System" width="100%">
 </p>
 
 <h1 align="center">📚 Book Recommender System: Hybrid Content-Based & Collaborative Filtering</h1>
@@ -83,14 +83,35 @@ Membangun sistem rekomendasi buku yang mampu:
 
 ## 🖼️ Visualisasi & Temuan Analisis
 
-> Tambahkan gambar hasil visualisasi (histogram distribusi rating, scatter/bar chart long-tail user & buku, confusion/error analysis) ke folder `images/` dan sambungkan di sini, mengikuti format tabel di bawah.
-
-| Distribusi Rating | Long-Tail User & Buku |
+### 1. Distribusi Rating & Profil Buku
+| Histogram User-ID & Book-Rating | 10 Penulis & Penerbit Terbanyak |
 |---|---|
-| ![Distribusi Rating](./images/distribusi_rating.png) | ![Long Tail](./images/long_tail.png) |
+| ![Histogram](./images/histogram%20User-ID%20dan%20Book-Rating.png) | ![Top Penulis Penerbit](./images/10%20Penulis%20dengan%20Buku%20Terbanyak%20dan%2010%20Penerbit%20dengan%20Buku%20Terbanyak.png) |
 
 - **Distribusi rating** didominasi nilai 0 (implicit feedback, 62% dari total interaksi). Untuk rating eksplisit, skor tinggi (7–10) jauh lebih sering muncul dibanding skor rendah (1–2) — user cenderung hanya memberi rating saat menyukai buku.
-- **Long-tail**: median rating per user maupun per buku sama-sama 1, sementara ada *power user* dengan 13.602 rating dan buku terpopuler dengan 2.502 rating — mengonfirmasi perlunya thresholding sebelum pemodelan collaborative filtering.
+- **Agatha Christie** tercatat sebagai penulis dengan jumlah buku terbanyak, dan **Harlequin** sebagai penerbit dengan jumlah buku terbanyak di dataset ini.
+
+### 2. Long-Tail & Dampak Thresholding
+| Distribusi Rating per User & Buku (log scale) | Dampak Thresholding terhadap Ukuran Data |
+|---|---|
+| ![Long Tail](./images/Distribusi%20Jumlah%20Rating%20per%20User%20%28log%20scale%29%20dan%20Distribusi%20Jumlah%20Rating%20per%20Buku%20%28log%20scale%29.png) | ![Dampak Thresholding](./images/Dampak%20Thresholding%20terhadap%20Ukuran%20Data.png) |
+
+- **Long-tail**: median rating per user maupun per buku sama-sama 1, sementara ada *power user* dengan 13.602 rating dan buku terpopuler dengan 2.502 rating.
+- **Thresholding** (minimal 10 rating per user/buku) memangkas data dari 105.283 user & 340.556 buku menjadi 12.720 user & 18.318 buku, tapi tetap mempertahankan 443.196 baris rating (~39% dari total) — trade-off yang sepadan untuk mendapatkan matriks yang lebih padat.
+
+### 3. Profil Demografi User
+| Distribusi Umur User (setelah cleaning) |
+|---|
+| ![Distribusi Umur](./images/Distribusi%20Umur%20User%20%28setelah%20cleaning%29.png) |
+
+- Setelah outlier (umur 0 dan 244 tahun) dibersihkan, mayoritas user berada di rentang usia produktif, dengan median 32 tahun.
+
+### 4. Evaluasi Model
+| RMSE & MAE per Fold (Cross-Validation) |
+|---|
+| ![RMSE MAE](./images/RMSE%20%26%20MAE%20per%20Fold%20%28Cross-Validation%29.png) |
+
+- Skor RMSE dan MAE relatif konsisten di setiap fold, menandakan performa model SVD stabil dan tidak overfit ke salah satu subset data tertentu.
 
 ---
 
@@ -160,9 +181,14 @@ Top rekomendasi: *Harry Potter and the Chamber of Secrets (Book 2)* dengan skor 
 │   ├── BX-Book-Ratings.csv
 │   └── BX-Users.csv
 ├── images/                           # Hasil visualisasi & grafik proyek
-│   ├── cover.jpeg
-│   ├── distribusi_rating.png
-│   └── long_tail.png
+│   ├── Book.jpg
+│   ├── histogram User-ID dan Book-Rating.png
+│   ├── 10 Penulis dengan Buku Terbanyak dan 10 Penerbit dengan Buku Terbanyak.png
+│   ├── Distribusi Jumlah Rating per User (log scale) dan Distribusi Jumlah Rating per Buku (log scale).png
+│   ├── Distribusi Jumlah Rating per Buku (log scale).png
+│   ├── Dampak Thresholding terhadap Ukuran Data.png
+│   ├── Distribusi Umur User (setelah cleaning).png
+│   └── RMSE & MAE per Fold (Cross-Validation).png
 ├── Book_Recommender.ipynb            # Notebook pengerjaan utama
 ├── requirements.txt                  # Daftar dependensi Python
 └── README.md
