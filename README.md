@@ -19,7 +19,7 @@ Proyek end-to-end di atas dataset <strong>Book-Crossing</strong> yang terdiri da
 **Tools Used:** Power BI, Power Query, DAX, Python (pandas, numpy, scikit-learn, scikit-surprise, matplotlib, seaborn)  
 **Dataset:** Book-Crossing Dataset (Users, Books, Book-Ratings)
 
-![Book-Crossing Dashboard Preview](images/halaman_1.png)
+![Book-Crossing Dashboard Preview](images/Halaman_1.png)
 
 ---
 
@@ -46,7 +46,7 @@ Proyek end-to-end di atas dataset <strong>Book-Crossing</strong> yang terdiri da
 
 ## 🚀 Akses & Download
 
-- 🌐 **Live Interactive Dashboard:** Jika Anda ingin mencoba fitur filter interaktif (*cross-highlighting*) pada dashboard ini secara langsung, silakan kunjungi tautan berikut: **[Masukkan Link Website Dashboard Anda Di Sini]**
+- 🌐 **Live Interactive Dashboard:** Jika Anda ingin mencoba fitur filter interaktif (*cross-highlighting*) pada dashboard ini secara langsung, silakan kunjungi tautan berikut: **[Buka Dashboard Interaktif di Power BI](https://app.powerbi.com/view?r=eyJrIjoiYjdkZWEzMzktYTRjZS00YjljLTgwYWUtYzI1MzcwNDg4NzhlIiwidCI6ImY4NjQ5NTQ2LTdjMTctNGNhMS1iMzcyLTI4Njg4NGRlZjRhOCJ9)**
 - 📥 **Download Project File:** Anda juga dapat mengunduh file asli model Power BI (.pbix) untuk mempelajari struktur DAX dan *Star Schema*-nya di dalam folder `model/` pada repositori ini.
 - 📓 **Notebook Python:** Seluruh proses cleaning, pemodelan, dan evaluasi sistem rekomendasi tersedia di `Book_Recommender.ipynb` (lihat [Cara Menjalankan Proyek](#-cara-menjalankan-proyek)).
 
@@ -283,7 +283,7 @@ Top rekomendasi: *Harry Potter and the Chamber of Secrets (Book 2)* dengan skor 
 ├── model/                            # File Power BI (.pbix) beserta DAX & Star Schema
 ├── images/                           # Preview dashboard & hasil visualisasi proyek
 │   ├── Book.jpg
-│   ├── halaman_1.png
+│   ├── Halaman_1.png
 │   ├── histogram User-ID dan Book-Rating.png
 │   ├── 10 Penulis dengan Buku Terbanyak dan 10 Penerbit dengan Buku Terbanyak.png
 │   ├── Distribusi Jumlah Rating per User (log scale) dan Distribusi Jumlah Rating per Buku (log scale).png
