@@ -308,8 +308,8 @@ Buka file `.pbix` di folder `model/` menggunakan Power BI Desktop untuk mempelaj
 
 1. **Clone repository ini**
    ```bash
-   git clone https://github.com/RidhoNurFauzi/Stellar-Classification.git
-   cd Stellar-Classification
+   git clone https://github.com/RidhoNurFauzi/Book-Recommender-System-Hybrid-Content-Based-Collaborative-Filtering-.git
+   cd Book-Recommender-System-Hybrid-Content-Based-Collaborative-Filtering-
    ```
 
 2. **Buat virtual environment (opsional tapi disarankan)**
