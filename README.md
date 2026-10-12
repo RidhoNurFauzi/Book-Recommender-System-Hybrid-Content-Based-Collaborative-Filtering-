@@ -72,8 +72,8 @@ Sebagai catatan, dataset yang sama digunakan di kedua bagian, tetapi pembersihan
 | **Pendekatan Rekomendasi** | Hybrid: Content-Based (TF-IDF + Cosine Similarity) → Collaborative Filtering (SVD) |
 | **Rating Eksplisit vs Implisit** | 433.671 eksplisit (1–10) vs 716.109 implisit (rating 0) |
 | **Model Collaborative** | SVD (library `Surprise`), Cross-Validation 3-fold |
-| **RMSE** | 3,5495 |
-| **MAE** | 2,8159 |
+| **RMSE** | 3,5474 |
+| **MAE** | 2,8136 |
 
 ---
 
