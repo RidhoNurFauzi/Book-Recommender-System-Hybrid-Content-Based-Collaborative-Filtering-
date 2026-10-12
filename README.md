@@ -234,15 +234,15 @@ Pendekatan ini mengatasi kelemahan masing-masing model tunggal: content-based sa
 
 | Model | Metrik | Skor |
 |---|---|---|
-| Collaborative Filtering (SVD) | RMSE | 3,5495 |
-| Collaborative Filtering (SVD) | MAE | 2,8159 |
+| Collaborative Filtering (SVD) | RMSE | 3,5474 |
+| Collaborative Filtering (SVD) | MAE | 2,8136 |
 
 | RMSE & MAE per Fold (Cross-Validation) |
 |---|
 | ![RMSE MAE](./images/RMSE%20%26%20MAE%20per%20Fold%20%28Cross-Validation%29.png) |
 
-- Skor RMSE dan MAE relatif konsisten di setiap fold, menandakan performa model SVD stabil dan tidak overfit ke salah satu subset data tertentu.
-- MAE 2,82 berarti rata-rata tebakan rating model meleset sekitar 2,82 poin dari rating asli pada skala 1–10. Mengingat tingginya proporsi implicit feedback dan sparsity data (99,9967%), tingkat error ini berada dalam batas wajar untuk sistem rekomendasi berbasis matriks skala besar.
+- Skor RMSE dan MAE relatif konsisten di setiap fold (simpangan baku RMSE 0,004 dan MAE 0,0035), menandakan performa model SVD stabil dan tidak overfit ke salah satu subset data tertentu.
+- MAE 2,81 berarti rata-rata tebakan rating model meleset sekitar 2,81 poin dari rating asli pada skala 0–10. Perlu dicatat bahwa evaluasi ini mencakup implicit feedback (rating 0, sekitar 62% dari interaksi) yang diperlakukan sebagai nilai rating, sehingga error ikut meningkat. Dengan sparsity data 99,9967%, tingkat error ini masih dalam batas wajar untuk sistem rekomendasi berbasis matriks skala besar, dan evaluasi hanya pada rating eksplisit atau dengan metrik ranking (Precision@K, NDCG) menjadi langkah pengembangan berikutnya.
 
 **Catatan Error Analysis**: hasil content-based sering memunculkan variasi ISBN dari judul buku yang sama (beda edisi/penerbit), karena model menghitung kemiripan murni dari teks. Ini dicatat sebagai arah pengembangan selanjutnya (lihat bagian Keterbatasan).
 
@@ -308,8 +308,8 @@ Buka file `.pbix` di folder `model/` menggunakan Power BI Desktop untuk mempelaj
 
 1. **Clone repository ini**
    ```bash
-   git clone https://github.com/<username>/<nama-repo>.git
-   cd <nama-repo>
+   git clone https://github.com/RidhoNurFauzi/Stellar-Classification.git
+   cd Stellar-Classification
    ```
 
 2. **Buat virtual environment (opsional tapi disarankan)**
